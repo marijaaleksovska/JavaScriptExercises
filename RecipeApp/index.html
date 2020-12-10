@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title></title>
+    <style>
+        #mbody{
+            display: flex;
+            justify-content: space-around;
+            flex-direction: column;
+            align-items: center;
+        }
+        #container{
+            width: 80%;
+            
+            margin: 0 auto;
+            height: 1000px;
+            margin-top: 100px;
+            background: #a8ff78;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #78ffd6, #a8ff78);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #78ffd6, #a8ff78); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            display: flex;
+            justify-content: space-around;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            
+        }
+        .card{
+            width: 20%;
+            
+        }
+        .navbar{
+            background-color: lightgray;
+            -webkit-box-shadow: 0 8px 6px -6px #999;
+    -moz-box-shadow: 0 8px 6px -6px #999;
+    box-shadow: 0 8px 6px -6px #999;
+            /* background: #E6DADA;  fallback for old browsers */
+            /* background: -webkit-linear-gradient(to left, #274046, #E6DADA);  Chrome 10-25, Safari 5.1-6 */
+            /* background: linear-gradient(to left, #274046, #E6DADA); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar fixed-top ">
+        <a class="navbar-brand" style="font-weight: bolder;">Yummy</a>
+        <form class="form-inline">
+         
+          <button id="addBtn" class="btn btn-outline-success my-2 my-sm-0" type="button" data-toggle="modal" data-target="#exampleModalCenter" >Add Recipe</button>
+        </form>
+      </nav>
+      
+  
+  <!-- Modal -->
+  <div class="modal fade bd-example-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Add Recipe</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="form-group">
+                  <label for="nameInput">Name</label>
+                  <input type="text" class="form-control" id="nameInput" >
+                </div>
+                <div class="form-group">
+                  <label for="typeInput">Type</label>
+                  <select class="form-control" id="typeInput">
+                    <option>Breakfast</option>
+                    <option>Brunch</option>
+                    <option>Lunch</option>
+                    <option>Dinner</option>
+                    <option>Desert</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="descriptionInput">Description</label>
+                  <textarea  class="form-control" id="descriptionInput" rows="3"></textarea>
+                  
+                </div>
+                <div class="form-group">
+                  <label for="directionInput">Directions</label>
+                  <textarea class="form-control" id="directionInput" rows="5"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="imageInput">Image URL</label>
+                    <input type="text" class="form-control" id="imageInput" >
+                  </div>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button  type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="saveBtn">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="container" >
+    
+    <div class="card-columns" id="cardDiv">
+       
+      </div>
+
+  </div>
+  <div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Recipe Details</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="mbody">
+           <div> <h3 id="recipeName"></h3> </div>
+           <div><h5 id="recipeType"></h5></div>
+           <div><img id="recipeImg" style="width: 300px;" ></div>
+           <div><h5>Description:  </h5><p id="recipeDescription"></p></div>
+           <div><h5>Directions:   </h5><p id="recipeDirections"></p></div>
+           
+
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="./scripts/app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
