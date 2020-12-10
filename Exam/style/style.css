@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#container{
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+#createBtn{
+    position: relative;
+    left: 60%;
+}
+#divTable{
+    margin-top: 40px;
+}
+h6{
+    color: rgb(43, 42, 42);
+}

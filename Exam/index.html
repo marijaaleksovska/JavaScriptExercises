@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="./style/style.css" />
+  </head>
+  <body>
+      <div id="container">
+        <div id="divForm">
+            <form>
+                <div class="form-group">
+                  <label for="idInput">ID:</label>
+                  <input type="tel" class="form-control" id="idInput" >
+                </div>
+                <div class="form-group">
+                    <label for="nameInput">Name:</label>
+                    <input type="text" class="form-control" id="nameInput" >
+                  </div>
+                  <div class="form-group">
+                    <label for="surnameInput">Surname</label>
+                    <input type="text" class="form-control" id="surnameInput" >
+                  </div>
+                  <div class="form-group">
+                    <label for="ageInput">Age</label>
+                    <input type="number" class="form-control" id="ageInput" min="0">
+                  </div>
+                <div class="form-group">
+                  <label for="applyPInput">Applying for position:</label>
+                  <select class="form-control" id="applyPInput">
+                    <option>Full-Stack .Net Developer</option>
+                    <option>Front-end developer</option>
+                    <option>QA</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                <label for="yearsEInput">Years of experience</label>
+                <input type="number" class="form-control" id="yearsEInput" min="0">
+                </div>
+                <div class="form-group">
+                <label for="eduEInput">Education</label>
+                <input type="text" class="form-control" id="eduEInput" >
+                </div>
+                
+                  <label>Satus:</label>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="status1" value="In Process">
+                    <label class="form-check-label" for="status1">In Process</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="status2" value="Hired">
+                    <label class="form-check-label" for="status2">Hired</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="status3" value="Rejected">
+                    <label class="form-check-label" for="status3">Rejected</label>
+                  </div>
+        
+                <div class="form-group">
+                  <label for="noteInput">Note</label>
+                  <textarea class="form-control" id="noteInput" rows="3"></textarea>
+                </div>
+                <button type="button" class="btn btn-primary" id="createBtn">Create</button>
+              </form>
+        </div>
+        <div id="divTable">
+            <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Surname</th>
+                    <th scope="col">Applying for position</th>
+                    <th scope="col">Status</th>
+                  </tr>
+                </thead>
+                <tbody id="tbody">
+                 
+                </tbody>
+              </table>
+              
+            
+
+        </div>
+      </div>
+     
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h6>ID:</h6><div id="id"></div>
+          <h6>Name:</h6> <div id="name"></div>
+          <h6>Surname:</h6> <div id="surname"></div>
+          <h6>Age:</h6><div id="age"></div>
+          <h6>Applying for position:</h6><div id="position"></div>
+          <h6>Years of experience:</h6> <div id="experience"></div>
+          <h6>Education:</h6> <div id="edu"></div>
+          <h6>Status:</h6><div id="status"></div>
+          <h6>Note:</h6><div id="note"></div>
+          
+          
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+   
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="./scripts/app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
