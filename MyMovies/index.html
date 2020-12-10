@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        #container{
+            width: 80%;
+            margin: 0 auto;
+            margin-top: 30px;
+        }
+        #divContainer{
+            width: 80%;
+            margin: 0 auto;
+            margin-top: 30px;
+            display: none;
+            margin-bottom: 30px;
+
+        }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand">My Movies</a>
+        <form class="form-inline">
+          
+          <button class="btn btn-secondary my-2 my-sm-0" id="addMovie"  type="button" >Add Movie</button>
+        </form>
+      </nav>
+      <div id="container">
+          <div id="divContainer">
+            <form>
+                <div class="form-group">
+                  <label for="nameInput">Name</label>
+                  <input type="email" class="form-control" id="nameInput" >
+                </div>
+                <div class="form-group">
+                  <label for="typeInput">Type</label>
+                  <select class="form-control" id="typeInput">
+                    <option>Comedy</option>
+                    <option>Action</option>
+                    <option>Romantic</option>
+                    <option>Adventure</option>
+                    <option>Drama</option>
+                    <option>Horror</option>
+                    <option>Musical</option>
+                    <option>Sience Fiction(Sci-Fi or SF)</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="descriptionInput">Description</label>
+                  <textarea class="form-control" id="descriptionInput" rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="imgInput">Image URL</label>
+                    <input type="email" class="form-control" id="imgInput" >
+                  </div>
+                <div class="form-group">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="checkbox1">
+                        <label class="form-check-label" for="checkbox1">Watched</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="checkbox2">
+                        <label class="form-check-label" for="checkbox2">Favorite</label>
+                      </div>
+                </div>
+                <button type="button" class="btn btn-primary" id="add">Add Movie</button>
+                <button type="button" class="btn btn-primary" id="cancel">Cancel</button>
+              </form>
+          </div>
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+              <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-all" role="tab" aria-controls="nav-home" aria-selected="true">All</a>
+              <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-watched" role="tab" aria-controls="nav-profile" aria-selected="false">Watched</a>
+              <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-watchlist" role="tab" aria-controls="nav-contact" aria-selected="false">Wachlist</a>
+              <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-favorites" role="tab" aria-controls="nav-contact" aria-selected="false">Favorites</a>  
+            </div>
+          </nav>
+          <div class="tab-content" id="nav-tabContent">
+            <div class="container tab-pane fade show active" id="nav-all" role="tabpanel" aria-labelledby="nav-home-tab">
+                <div class="row" id="rowContainerAll" style="margin-top: 20px;">
+                    <!-- <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card">
+                            <img src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F1039590.jpg&w=595&h=595&c=sc&poi=face&q=85"
+                                class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">Banh Mi</h5>
+                                <p class="card-text"> Vietnamese sandwich, made with chicken and full of pickled vegetables.
+                                </p>
+                                <button class="btn btn-secondary">See Recipe</button>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-watched" role="tabpanel" aria-labelledby="nav-profile-tab">
+                <div class="row" id="rowContainerW" style="margin-top: 20px;">
+                    <!-- <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card">
+                            <img src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F1039590.jpg&w=595&h=595&c=sc&poi=face&q=85"
+                                class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">Banh Mi</h5>
+                                <p class="card-text"> Vietnamese sandwich, made with chicken and full of pickled vegetables.
+                                </p>
+                                <button class="btn btn-secondary">See Recipe</button>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+            <div class="tab-pane fade" id="nav-watchlist" role="tabpanel" aria-labelledby="nav-contact-tab">
+                <div class="row" id="rowContainerWL" style="margin-top: 20px;">
+                    <!-- <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card">
+                            <img src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F1039590.jpg&w=595&h=595&c=sc&poi=face&q=85"
+                                class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">Banh Mi</h5>
+                                <p class="card-text"> Vietnamese sandwich, made with chicken and full of pickled vegetables.
+                                </p>
+                                <button class="btn btn-secondary">See Recipe</button>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+                
+            </div>
+            <div class="tab-pane fade" id="nav-favorites" role="tabpanel" aria-labelledby="nav-contact-tab">
+                <div class="row" id="rowContainerFav" style="margin-top: 20px;">
+                    <!-- <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card">
+                            <img src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F1039590.jpg&w=595&h=595&c=sc&poi=face&q=85"
+                                class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">Banh Mi</h5>
+                                <p class="card-text"> Vietnamese sandwich, made with chicken and full of pickled vegetables.
+                                </p>
+                                <button class="btn btn-secondary">See Recipe</button>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+          </div>
+
+      </div>
+      
+    <script src="./scripts/app.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
